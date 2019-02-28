@@ -3,16 +3,16 @@ describe("About Arrays", function() {
   // We shall contemplate truth by testing reality, via spec expectations.  
   it("should create arrays", function() {
     var emptyArray = [];
-    expect(typeof(emptyArray)).toBe('array'); // A mistake?-- http:javascript.crockford.com/remedial.html
+    expect(typeof(emptyArray)).toBe('array'); //arrays are not a seperate data type arrays ARE objects
     expect(emptyArray.length).toBe(0);//length should be 0 because array is empty
 
     var multiTypeArray = [0, 1, "two", function() { return 3; }, {value1: 4, value2: 5}, [6, 7]];
-    expect(multiTypeArray[0]).toBe(FILL_ME_IN);
-    expect(multiTypeArray[2]).toBe(FILL_ME_IN);
-    expect(multiTypeArray[3]()).toBe(FILL_ME_IN);
-    expect(multiTypeArray[4].value1).toBe(FILL_ME_IN);
-    expect(multiTypeArray[4]["value2"]).toBe(FILL_ME_IN);
-    expect(multiTypeArray[5][0]).toBe(FILL_ME_IN);
+    expect(multiTypeArray[0]).toBe(0); //number
+    expect(multiTypeArray[2]).toBe("two");//string
+    expect(multiTypeArray[3]()).toBe(3);//function
+    expect(multiTypeArray[4].value1).toBe(4);//object
+    expect(multiTypeArray[4]["value2"]).toBe(5);//object
+    expect(multiTypeArray[5][0]).toBe(6);//array
   });
 
   it("should understand array literals", function() {
