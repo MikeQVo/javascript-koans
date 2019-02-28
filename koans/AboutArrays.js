@@ -46,12 +46,12 @@ describe("About Arrays", function() {
   it("should slice arrays", function() {
     var array = ["peanut", "butter", "and", "jelly"];
     
-    expect(array.slice(0, 1)).toEqual(["peanut", "butter"]);
-    expect(array.slice(0, 2)).toEqual(["peanut", "butter", "and"]);
-    expect(array.slice(2, 2)).toEqual(["and"]);
-    expect(array.slice(2, 20)).toEqual(["and", "jelly"]);
-    expect(array.slice(3, 0)).toEqual(["jelly"];
-    expect(array.slice(3, 100)).toEqual(["jelly"]);
+    expect(array.slice(0, 1)).toEqual(["peanut"]); //second number is exclusive no inclusive
+    expect(array.slice(0, 2)).toEqual(["peanut", "butter"]);
+    expect(array.slice(2, 2)).toEqual([]); //it starts at 2 and ends at two does not include
+    expect(array.slice(2, 20)).toEqual(["and", "jelly"]); //numbers beyond length of array just ends it at the last number
+    expect(array.slice(3, 0)).toEqual([]; //ending params that start before first param returns nothing
+    expect(array.slice(3, 100)).toEqual(["jelly"]); 
     expect(array.slice(5, 1)).toEqual([]);
   });
 
