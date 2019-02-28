@@ -3,7 +3,7 @@ describe("About Arrays", function() {
   // We shall contemplate truth by testing reality, via spec expectations.  
   it("should create arrays", function() {
     var emptyArray = [];
-    expect(typeof(emptyArray)).toBe('array'); //arrays are not a seperate data type arrays ARE objects
+    expect(typeof(emptyArray)).toBe('object'); //arrays are not a seperate data type arrays ARE objects
     expect(emptyArray.length).toBe(0);//length should be 0 because array is empty
 
     var multiTypeArray = [0, 1, "two", function() { return 3; }, {value1: 4, value2: 5}, [6, 7]];
