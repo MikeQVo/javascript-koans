@@ -70,7 +70,7 @@ describe("About Arrays", function() {
 
     var copyOfArray = array.slice();
     copyOfArray[3] = "changed in copyOfArray";
-    expect(array[3]).toBe("changed in copyOfArray");
+    expect(array[3]).toBe("three"); //originally thought the reference was to new array not old array
   });
 
   it("should push and pop", function() {
