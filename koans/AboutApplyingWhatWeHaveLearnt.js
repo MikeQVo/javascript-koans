@@ -16,7 +16,7 @@ describe("About Applying What We Have Learnt", function() {
   /*********************************************************************************/
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (imperative)", function () {
-    var i,j,hasMushrooms, productsICanEat = [];
+    var i,j,hasMushrooms, productsICanEat = []; //local var
 
     for (i = 0; i < products.length; i+=1) {
         if (products[i].containsNuts === false) {
@@ -30,13 +30,14 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(1);
   });
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
       var productsICanEat = [];
 
       /* solve using filter() & all() / any() */
+      productsICanEat = products.filter(function(x) {return x.containsNuts !== false})
 
       expect(productsICanEat.length).toBe(FILL_ME_IN);
   });
