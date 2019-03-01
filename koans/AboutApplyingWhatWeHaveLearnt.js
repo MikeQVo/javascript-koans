@@ -37,9 +37,11 @@ describe("About Applying What We Have Learnt", function() {
       var productsICanEat = [];
 
       /* solve using filter() & all() / any() */
-      productsICanEat = products.filter(function(x) {return x.containsNuts !== false})
+      var hasMushrooms = function(x) { return x === "mushrooms" };
+      productsICanEat = _(products).filter(function(x) {return x.containsNuts === false});
+      productsICanEat = _(productsICanEat).filter(function(x) { return _(x.ingredients).any(hasMushrooms) === false});
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
